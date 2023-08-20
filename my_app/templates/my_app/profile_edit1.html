@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Profile Page
+{% endblock %}
+{% load widget_tweaks %}
+{% block body %}
+    <form method="post">
+{#        {{ form.as_p }}#}
+        <div class="form-group">
+            Facebook:
+            {% render_field form.facebook class="form-control" placeholder="Facebook" type="text" %}
+        </div>
+        <div class="col-sm-9 text-secondary">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary px-4" value="Save Changes">
+
+        </div>
+    </form>
+{% endblock %}

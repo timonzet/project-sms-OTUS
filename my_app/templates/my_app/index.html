@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Index page
+{% endblock %}
+{% for profile in profiles %}
+    profile_pk = profile.pk
+    user_id = profile.user
+{% endfor %}
+
+{% block body %}
+    <h1>Index page</h1>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% for name, field in api_context %}
+            <tr>
+                <td>{{ name }}</td>
+                <td>{{ field.count }}</td>
+                <td>{{ field.price }}</td>
+                <td>
+                    <form method="post">
+                        {% csrf_token %}
+                        <a href="" class="btn btn-success">Получить</a>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
