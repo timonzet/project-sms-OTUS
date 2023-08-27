@@ -3,7 +3,6 @@
 {% block title %}
   Register
 {% endblock %}
-
 {% block body %}
   <form method="post">
     {% csrf_token %}
@@ -11,3 +10,31 @@
     <input class="btn btn-primary" type="submit" value="Register">
   </form>
 {% endblock %}
+<script>
+
+$(document).ready(function () {
+    $('#id_username').keyup(function () {
+    // создаем AJAX-вызов
+    $.ajax({
+        data: $(this).serialize(), // получаяем данные формы
+        url: "{% url 'validate_username' %}",
+        // если успешно, то
+        success: function (response) {
+            if (response.is_taken == true) {
+                $('#id_username').removeClass('is-valid').addClass('is-invalid');
+                $('#id_username').after('Это имя пользователя недоступно!')
+            }
+            else {
+                $('#id_username').removeClass('is-invalid').addClass('is-valid');
+                $('#usernameError').remove();
+            }
+        },
+        // если ошибка, то
+        error: function (response) {
+            // предупредим об ошибке
+            console.log(response.responseJSON.errors)
+        }
+    });
+    return false;
+});
+</script>

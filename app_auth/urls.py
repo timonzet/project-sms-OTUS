@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
 
-from app_auth.views import LoginView, LogoutView, RegisterView
+from app_auth.views import LoginView, LogoutView, RegisterView, validate_username
 
 app_name = "app_auth"
 
@@ -29,4 +29,5 @@ urlpatterns = [
         RegisterView.as_view(),
         name="register",
     ),
+    path("validate_username", validate_username, name="validate_username",),
 ]

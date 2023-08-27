@@ -1,6 +1,19 @@
 /*
     DJANGO Admin styles
 */
+#filter-input {
+  width: 200px;
+}
+.square-block {
+width:70px; /*ширина */
+height:70px; /*высота */
+background:#2F73B6; /*фоновый цвет*/
+color:#fff; /*цвет шрифта*/
+text-align:center; /*выравнивание текста по центру*/
+text-transform:uppercase; /*написание текста заглавными буквами*/
+line-height:70px; /*высота строки текста*/
+float:left;/*обтекане блока по левому краю (при необходимости)*/
+}
 body{
     margin-top:20px;
     color: #1a202c;
@@ -333,7 +346,6 @@ code, pre {
     font-size: 0.75rem;
     overflow-x: auto;
 }
-
 pre.literal-block {
     margin: 10px;
     background: var(--darkened-bg);

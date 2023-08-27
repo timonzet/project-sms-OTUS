@@ -4,7 +4,7 @@ from django.contrib.auth.views import (
     LoginView as LoginViewGeneric,
     LogoutView as LogoutViewGeneric,
 )
-from django.http import HttpRequest
+from django.http import HttpRequest, JsonResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView
@@ -55,3 +55,10 @@ class RegisterView(CreateView):
     def create_profile(sender, instance, created, **kwargs):
         if created:
             ProfileUser.objects.create(user=instance)
+
+
+def validate_username(request):
+    """Проверка доступности логина"""
+    username = request.GET.get("username", None)
+    response = {"is_taken": User.objects.filter(username__iexact=username).exists()}
+    return JsonResponse(response)

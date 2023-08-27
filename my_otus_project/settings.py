@@ -27,7 +27,12 @@ SECRET_KEY = "django-insecure-egi^^8*kw)l6k(tt!s0o*hnbcx=so&9huak-=as6u-129tg6n=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0"]
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+    "localhost",
+]
 
 
 # Application definition
@@ -41,6 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "my_app.apps.MyAppConfig",
     "app_auth.apps.AppAuthConfig",
+    "debug_toolbar",
     "widget_tweaks",
 ]
 
@@ -52,6 +58,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "my_otus_project.urls"
