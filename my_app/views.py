@@ -20,6 +20,282 @@ from .models import ProfileUser, ProfileOperations
 api = VakSmsApi(api_key="c230a5896a6e4ab1a743d07a0340fc78")
 API = "c230a5896a6e4ab1a743d07a0340fc78"
 
+a = {
+    "OpenAI": "dr",
+    "Cupis": "cp",
+    "Tinkoff": "tf",
+    "QIWl Wallet": "qw",
+    "VK - MailRu": "mr",
+    "Netflix": "nf",
+    "AliExpress": "ai",
+    "Юmoney": "ym",
+    "Nike": "nk",
+    "Protonmail": "pm",
+    "WhatsApp": "wa",
+    "Twitter": "tw",
+    "Yahoo": "yh",
+    "Yalla": "ll",
+    "AOL": "ao",
+    "Discord": "dc",
+    "Facebook": "fb",
+    "WeChat": "wc",
+    "Instagram": "ig",
+    "PayPal": "pp",
+    "WebMoney": "wm",
+    "AirBnb": "ab",
+    "Yandex": "ya",
+    "Google": "gl",
+    "Uber": "ub",
+    "Вкусно и точка": "md",
+    "Tinder": "td",
+    "Telegram": "tg",
+    "Line messenger": "lm",
+    "Tiktok": "tk",
+    "Microsoft": "ms",
+    "Viber": "vi",
+    "Tencent QQ": "qq",
+    "Steam": "st",
+    "Coffee LIKE": "ec",
+    "Checkscan": "chs",
+    "Greggs": "eg",
+    "Grindr": "gd",
+    "thediversity": "hi",
+    "Paysend": "pd",
+    "Kraisbonus": "kb",
+    "Rencredit": "rc",
+    "Золотое Яблоко": "gap",
+    "Citilink": "cl",
+    "Winelab": "wn",
+    "Letual": "le",
+    "Технопарк": "tpk",
+    "holodilnik.ru": "hld",
+    "Mozen": "mz",
+    "Weplay": "pw",
+    "Epicnpc": "nc",
+    "vsesmart": "va",
+    "TaxiMaxim": "tm",
+    "Casino Online": "co",
+    "FixPrice": "fp",
+    "stalker-co": "str",
+    "remi": "rmi",
+    "Lazada": "dl",
+    "hh.ru": "hh",
+    "bethowen.ru": "bth",
+    "salton-promo": "spr",
+    "kotanyipromo": "ktn",
+    "namars": "mrs",
+    "VTB": "vt",
+    "internetopros": "io",
+    "Ebay": "eb",
+    "DiDi taxi": "dd",
+    "Twitch": "th",
+    "Верный": "vn",
+    "Vsesmart.ru": "sar",
+    "Amazon": "am",
+    "Cstar": "rx",
+    "24u": "24u",
+    "Coolclever": "cv",
+    "Tilda": "ld",
+    "Weco": "wo",
+    "СберМегаМаркет": "smm",
+    "Atlasbus.by": "atl",
+    "Vivaldi": "vd",
+    "Mobileproxy": "my",
+    "Alfa-Bank": "af",
+    "SberCloud": "scd",
+    "TradingView": "tv",
+    "Аптеки": "at",
+    "Золотая Корона": "zk",
+    "MyBeautyBonus": "yb",
+    "Stormgain": "sn",
+    "Seafood-shop": "sfs",
+    "Getcontact": "gc",
+    "ПочтаБанк": "pbk",
+    "Apple": "al",
+    "ФКХК": "fkhk",
+    "Zhihu": "zu",
+    "kopilkaclub": "kc",
+    "MyGLO": "ae",
+    "Кошелек": "cm",
+    "Bumble": "bm",
+    "Tatneft": "tn",
+    "LOVE": "lv",
+    "Lukoil": "lkl",
+    "Regru": "rr",
+    "Taobao": "tb",
+    "Ogon": "og",
+    "AliPay": "ap",
+    "Страховые": "strh",
+    "Петрович": "ph",
+    "etxt.biz": "txt",
+    "Tanuki": "ti",
+    "Rutube": "rtb",
+    "nloto": "nlt",
+    "ЧитайГород": "chg",
+    "Ак Барс Банк": "ak",
+    "Твоё": "ty",
+    "Move": "xc",
+    "Веб хостинги": "bg",
+    "MVideo": "mv",
+    "СберМаркет": "sm",
+    "Столото": "sl",
+    "Киносервисы": "ks",
+    "Raiffeisen": "rf",
+    "Onrealt": "or",
+    "Вкусвилл": "vv",
+    "KFC": "kf",
+    "Ашан": "au",
+    "Battle": "xn",
+    "Signal": "sig",
+    "Burger King": "bk",
+    "Profi": "prf",
+    "Deliveroo": "do",
+    "Tom-tailor": "tot",
+    "Novex": "nx",
+    "Шоколадница": "shc",
+    "JumpTaxi": "jt",
+    "Premium one": "ta",
+    "IQOS": "iqs",
+    "Buff.163": "bf",
+    "Vodorobot": "vr",
+    "budget4me-34": "bgp",
+    "Biglion": "bl",
+    "Ostin": "on",
+    "Спортмастер": "sa",
+    "Мята lounge": "mlg",
+    "KazanExpress": "ke",
+    "Кикшеринг": "sk",
+    "banki.ru": "br",
+    "ДругВокруг": "dv",
+    "Ozon": "oz",
+    "KNP24": "kn",
+    "Drom": "hz",
+    "DoDo pizza": "dp",
+    "Avito": "av",
+    "Remit": "re",
+    "Wildberries": "wb",
+    "Inbox lv": "il",
+    "X5ID": "x5",
+    "Book24": "b24",
+    "Marlboro": "mrl",
+    "LinkedIn": "ln",
+    "Магнит": "mg",
+    "IMO messanger": "im",
+    "Beela Chat": "ba",
+    "Perfluence": "pf",
+    "inDriver": "rl",
+    "Wooppay": "wp",
+    "mail.kz": "mkz",
+    "Blablacar": "bb",
+    "Steemit": "ste",
+    "OLX": "ox",
+    "Farpost": "fr",
+    "32Red": "rd",
+    "Naver": "nv",
+    "Unistream": "us",
+    "Coinbase": "cb",
+    "werewolf.53site": "wer",
+    "Getir": "ge",
+    "Battle": "bt",
+    "FreeCash": "fc",
+    "Monese": "me",
+    "Rocketreach": "rk",
+    "Whitecard": "wt",
+    "bet365": "ef",
+    "Ticketmaster.com": "tz",
+    "Ftx": "fx",
+    "Dropverse": "dro",
+    "Weststeincard": "wcd",
+    "Paysafecard": "pc",
+    "Craigslist": "crg",
+    "Okcupid": "oc",
+    "Yubo": "yu",
+    "Сoursehero": "coh",
+    "rediff.com": "rdf",
+    "GroupMe": "gm",
+    "Revolut": "rt",
+    "Ultra.io": "uo",
+    "4FunLite": "fl",
+    "1688": "hn",
+    "Foodpanda": "fa",
+    "Weibo": "wi",
+    "Bigo Live": "be",
+    "Ace2three": "ac",
+    "inpost.pl": "inp",
+    "Communitygaming": "cg",
+    "Rediff.com": "mrf",
+    "Alfagift": "ag",
+    "Shopee": "sh",
+    "Fameex": "fm",
+    "Blibli": "fk",
+    "Ovo": "oo",
+    "Gojek": "gj",
+    "DANA": "dn",
+    "Jingdong": "jd",
+    "Badoo": "jz",
+    "Snapchat": "fu",
+    "alias_": "als",
+    "PaxFul": "xf",
+    "OfferUp": "zm",
+    "Bolt": "ol",
+    "Blockchain": "bc",
+    "Faceit": "qz",
+    "CryptoCom": "ry",
+    "Dundle": "fi",
+    "stripe": "je",
+    "Yoshidrops": "yd",
+    "KakaoTalk": "kt",
+    "Kaggle": "kg",
+    "Магнолия": "mn",
+    "Yamaguchi": "yam",
+    "УМ": "um",
+    "Zoon": "zn",
+    "Суточно": "sy",
+    "2domains": "dom",
+    "Sravni.ru": "ra",
+    "Azsirbis": "az",
+    "Selectel": "se",
+    "Улыбка радуги": "xa",
+    "РосБанк": "rb",
+    "Bavarushka": "vs",
+    "Едем.рф": "ed",
+    "Privetmir": "pi",
+    "Kvartplata.ru": "kp",
+    "VseInstrumenti": "vsi",
+    "Совкомбанк": "sb",
+    "youdo": "ud",
+    "Litnet": "et",
+    "Sokolov": "sv",
+    "Мой-ка": "ik",
+    "Rosneft": "rn",
+    "NationalLottery": "nl",
+    "Leadgid.com": "lg",
+    "FancyLive": "vf",
+    "Trovo": "ov",
+    "Сушкоф": "qx",
+    "Yappy": "kj",
+    "Билеты в кино": "zj",
+    "Cian": "ca",
+    "ЯRUS": "yr",
+    "blok-post.ru": "blp",
+    "Cofix": "cf",
+    "Лента": "lt",
+    "Solar-staff": "ss",
+    "150bar": "ar",
+    "СДЭК": "dk",
+    "El-plat": "ep",
+    "Газпром": "gp",
+    "Galamart": "gal",
+    "Pivko24": "pv",
+    "RuVDS": "rv",
+    "Hoff": "ho",
+    "Xiaomi": "xi",
+    "Checkin": "ci",
+    "Blizzard": "bz",
+    "Huya.com": "hy",
+}
+SERVICES = dict((v, k) for k, v in a.items())
+
 
 def get_list_services(country, operator):
     url = f"https://vak-sms.com/api/getCountNumberList/?apiKey={API}&country={country}&operator={operator}&price"
@@ -34,14 +310,22 @@ def get_list_services(country, operator):
 def get_service(request):
     if request.method == "POST":
         service = request.POST.get("service")
-        print(service)
         url = f"https://vak-sms.com/api/getNumber/?apiKey={API}&service={service}&country=ru&operator=mts"
-        response = requests.get(url)
         services = get_list_services(country="ru", operator="mts")
+        if request.user.profile.balance < int(services[service]['price']):
+            return JsonResponse(
+                {
+                    "error": "noMoney",
+                    "price": int(services[service]['price']),
+                },
+                content_type="application/json",
+            )
+        response = requests.get(url)
         price = int(services[service]["price"])
         if response.status_code == 200:
             context_service = response.json()
-            if context_service.keys() == "error":
+            print(dict(context_service).get("error"))
+            if context_service.get("error"):
                 return JsonResponse(
                     {
                         "error": context_service,
@@ -58,13 +342,11 @@ def get_service(request):
                     status="1",
                 )
                 operation.save()
-                numbers = get_list_numbers(request)
                 return JsonResponse(
                     {
                         "tel": context_service["tel"],
                         "id": context_service["idNum"],
                         "price": price,
-                        "numbers": numbers,
                     },
                     content_type="application/json",
                 )
@@ -82,24 +364,6 @@ def get_service(request):
         )
 
 
-def get_list_numbers(request: HttpRequest):
-    numbers = ProfileOperations.objects.filter(
-        status=ProfileOperations.Status.active, profile=request.user.profile
-    ).all()
-    numbers_data = list(numbers.values())
-
-    # Проверяем каждое значение на сериализуемость
-    for data in numbers_data:
-        for key, value in data.items():
-            if not isinstance(value, (str, int, float)):
-                data[key] = str(value)  # Преобразуем неподдерживаемые типы в строки
-
-    json_data = json.dumps(numbers_data)
-
-    print(json_data)
-    return json_data
-
-
 def get_sms(request: HttpRequest):
     if request.method == "POST":
         id = request.POST.get("id")
@@ -109,10 +373,23 @@ def get_sms(request: HttpRequest):
         print(sms, id)
         return JsonResponse(
             {
-                "tel": response.json(),
+                "sms": sms["smsCode"],
             },
             content_type="application/json",
         )
+
+
+@login_required
+def popolnenie(request: HttpRequest):
+    if request.method == "POST":
+        new_balance = request.POST.get("money")
+
+        profile = ProfileUser.objects.get(pk=request.user.profile.pk)
+        profile.balance += int(new_balance)
+        profile.save()
+        return redirect("my_app:index")
+
+    return render(request=request, template_name="my_app/popolnenie.html")
 
 
 def index_page(request: HttpRequest):
@@ -122,6 +399,7 @@ def index_page(request: HttpRequest):
         template_name="my_app/index.html",
         context={
             "services": qr,
+            "services_name": SERVICES,
         },
     )
 

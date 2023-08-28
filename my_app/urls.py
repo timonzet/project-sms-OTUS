@@ -7,6 +7,7 @@ from .views import (
     get_service,
     index_page,
     get_sms,
+    popolnenie,
 )
 
 app_name = "my_app"
@@ -15,6 +16,7 @@ app_name = "my_app"
 urlpatterns = [
     path("", index_page, name="index"),
     path("get-service/", get_service, name="get-service"),
+    path("popolnenie/", popolnenie, name="popolnenie"),
     path("get-sms/", get_sms, name="get-sms"),
     path("profile/", ShowProfile.as_view(), name="profile"),
     path("profile/edit/<int:pk>/", EditProfile.as_view(), name="profile-edit"),

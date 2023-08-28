@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="\static\admin\img\img_1.png">
-    <link href="\staticfiles\admin\css\base.css">
-    <link href="\staticfiles\admin\js\core.js">
+    <link rel="icon" href="{% static 'admin/img/img_1.png' %}">
+    <link href="{% static 'admin/css/base.css' %}">
+    <link href="{% static 'admin/js/core.js' %}">
     <title>{% block title %}
         Base
     {% endblock %}</title>
@@ -31,7 +31,14 @@
                     {{ request.user.profile }}
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Balance: {{ request.user.profile.balance }}</a></li>
+                    <li>
+                        <a class="dropdown-item"
+                           href="{% url 'my_app:profile' %}">Profile</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item"
+                           href="{% url 'my_app:popolnenie' %}">Balance: {{ request.user.profile.balance }}</a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item">

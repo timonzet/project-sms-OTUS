@@ -1,25 +1,38 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load get_dict_val %}
 {% block title %}
     Index page
 {% endblock %}
-<script src="{% static "\admin\css\base.css" %}"></script>
-<script src="\staticfiles\admin\js\core.js"></script>
+<script src="{% static "admin/css/base.css" %}"></script>
+<script src="{% static "admin/css/base.css" %}"></script>
 {% block body %}
     <h1>Index page</h1>
-    <div id="result"></div>
-    <div class="container">
     <div class="row">
         <div class="col-sm">
-            <ul class="list-group">
-                <form method="post" id="services" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <ul id="services-list" class="list-group">
-                        {% for name, field in services %}
+            <form method="post" id="services" enctype="multipart/form-data">
+                {% csrf_token %}
+                <ul id="services-list" class="list-group row">
+                    {% for name, field in services %}
+                        {% if services_name|get_item:name %}
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <td>{{ name }}</td>
-                                <span class="badge bg-primary rounded-pill">{{ field.count }} шт.</span>
-                                <span id="balance" class="badge bg-warning rounded-pill">{{ field.price }}</span>
+                                <div class="col-sm">
+                                    <img class="icon" src="static/admin/img/services/{{ name }}.png"
+                                         alt="{{ services_name|get_item:name }}">
+                                </div>
+                                <div class="col-sm">
+                                    {{ services_name|get_item:name }}
+                                </div>
+                                <div class="col-sm">
+                                    <span class="badge bg-primary rounded-pill">
+                                    {{ field.count }} шт.
+                                    </span>
+                                </div>
+                                <div class="col-sm">
+                                    <span id="balance" class="badge bg-warning rounded-pill">
+                                        {{ field.price }} руб.
+                                    </span>
+                                </div>
                                 <br/>
                                 <!-- Добавьте нужные данные в элемент data-id -->
                                 <input hidden="display-block" type="hidden" name="service" value="{{ name }}"
@@ -30,51 +43,56 @@
                                     <a href="{% url 'app_auth:login' %}" class="btn btn-primary">Получить</a>
                                 {% endif %}
                             </li>
-                        {% endfor %}
-                    </ul>
-                </form>
-            </ul>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </form>
         </div>
         <div class="col-sm">
-            <div id="chat-container" style="display: none">
-
-                <div id="chat-messages">
-                    <!-- Здесь будет отображаться содержимое чата -->
-
-                    <a id="icon-link">
-                        <i aria-label="icon: reload" tabindex="-1" class="page__help anticon anticon-reload">
-                            <svg viewBox="64 64 896 896" data-icon="reload" width="1em" height="1em" fill="currentColor"
-                                 aria-hidden="true" focusable="false" class="">
-                                <path d="M909.1 209.3l-56.4 44.1C775.8 155.1 656.2 92 521.9 92 290 92 102.3 279.5 102 511.5 101.7 743.7 289.8 932 521.9 932c181.3 0 335.8-115 394.6-276.1 1.5-4.2-.7-8.9-4.9-10.3l-56.7-19.5a8 8 0 0 0-10.1 4.8c-1.8 5-3.8 10-5.9 14.9-17.3 41-42.1 77.8-73.7 109.4A344.77 344.77 0 0 1 655.9 829c-42.3 17.9-87.4 27-133.8 27-46.5 0-91.5-9.1-133.8-27A341.5 341.5 0 0 1 279 755.2a342.16 342.16 0 0 1-73.7-109.4c-17.9-42.4-27-87.4-27-133.9s9.1-91.5 27-133.9c17.3-41 42.1-77.8 73.7-109.4 31.6-31.6 68.4-56.4 109.3-73.8 42.3-17.9 87.4-27 133.8-27 46.5 0 91.5 9.1 133.8 27a341.5 341.5 0 0 1 109.3 73.8c9.9 9.9 19.2 20.4 27.8 31.4l-60.2 47a8 8 0 0 0 3 14.1l175.6 43c5 1.2 9.9-2.6 9.9-7.7l.8-180.9c-.1-6.6-7.8-10.3-13-6.2z"></path>
-                            </svg>
-                        </i>
-                    </a>
-                </div>
-
+            <div id="chat-container" class="row" style="display: none">
+                <a id="icon-link" class="icon">
+                    <svg viewBox="64 64 896 896" data-icon="reload" width="1em" height="1em" fill="currentColor"
+                         aria-hidden="true" focusable="false" class="">
+                        <path d="M909.1 209.3l-56.4 44.1C775.8 155.1 656.2 92 521.9 92 290 92 102.3 279.5 102 511.5 101.7 743.7 289.8 932 521.9 932c181.3 0 335.8-115 394.6-276.1 1.5-4.2-.7-8.9-4.9-10.3l-56.7-19.5a8 8 0 0 0-10.1 4.8c-1.8 5-3.8 10-5.9 14.9-17.3 41-42.1 77.8-73.7 109.4A344.77 344.77 0 0 1 655.9 829c-42.3 17.9-87.4 27-133.8 27-46.5 0-91.5-9.1-133.8-27A341.5 341.5 0 0 1 279 755.2a342.16 342.16 0 0 1-73.7-109.4c-17.9-42.4-27-87.4-27-133.9s9.1-91.5 27-133.9c17.3-41 42.1-77.8 73.7-109.4 31.6-31.6 68.4-56.4 109.3-73.8 42.3-17.9 87.4-27 133.8-27 46.5 0 91.5 9.1 133.8 27a341.5 341.5 0 0 1 109.3 73.8c9.9 9.9 19.2 20.4 27.8 31.4l-60.2 47a8 8 0 0 0 3 14.1l175.6 43c5 1.2 9.9-2.6 9.9-7.7l.8-180.9c-.1-6.6-7.8-10.3-13-6.2z"></path>
+                    </svg>
+                </a>
                 <div>
-                    <div class="border square-block" >
-                        <code id="tel_number">{{ number }}</code>
-                        <br style="display: none">
-                        <div>
-                            <span id="sms" class="text">
-                            Здесь появится СМС с кодом после того, как вы используете номер для получения смс
-                        </span>
-                        </div>
-                        <span id="idNum" class="" style="display: none"></span>
+                    <ul class="list-group">
+                        <li class="list-group-item colm-sm">
+                                 <span class="badge  rounded-pill">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="f0AiQzMHtn_1357" viewBox="0 0 640 480"
+                                     height="16" width="22">
+                                    <g fill-rule="evenodd" stroke-width="1pt">
+                                        <path fill="#fff" d="M0 0h640v480H0z"></path>
+                                        <path fill="#0039a6" d="M0 160h640v320H0z"></path>
+                                        <path fill="#d52b1e" d="M0 320h640v160H0z"></path>
+                                    </g>
+                                </svg>
+                                 </span>
+                            <span id="tel_number" class="rounded-pill">
+                                {{ number }}
+                            </span>
+                            <span id="idNum" class="" style="display: none"></span>
+                        </li>
+                        <li class="list-group-item">
 
-
-                    </div>
+                            <span id="sms" class="">
+                                Здесь будет отображаться ваше СМС
+                            </span>
+                        </li>
                 </div>
             </div>
         </div>
-        <div class="col-sm">
-
-        </div>
-        <!-- Content here -->
-
     </div>
     <div id="result"></div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const iconLink = document.getElementById("icon-link");
+
+        iconLink.addEventListener("click", function () {
+            iconLink.style.borderRadius = "50%";
+        });
+    </script>
     <script>
         $(document).ready(function () {
             $('.btn-primary').on('click', function (event) {
@@ -97,7 +115,6 @@
                         if (response.price > {{ request.user.profile.balance }}) {
                             alert('Недостаточно средств на балансе!');
                         } else {
-                            alert('Запрос успешно выполнен.');
                             $("#tel_number").text(response.tel);
                             $("#idNum").text(response.id);
                             $("#chat-container").show();
@@ -125,10 +142,10 @@
                     },
                     success: function (response) {
                         {#// Обработка ответа от представления Django#}
-                        if (!isNaN(response.smsCode)) {
-                        $('#sms').text(response);
-                        }
+                        if (response.sms.text != NaN) {
 
+                            $('#sms').text(response.sms);
+                        }
                     }
                 });
             });
