@@ -15,7 +15,7 @@
                                 {% if profile.profile_pic %}
                                     <img src="{{ profile.profile_pic.url }}" height=100 width=100><br><br>
                                 {% else %}
-                                    <img src="{% static '\admin\img\user.png' %}" height=100 width=100><br><br>
+                                    <img src="{% static 'admin/img/user.png' %}" height=100 width=100><br><br>
                                 {% endif %}
                             <h4>{{ user }}</h4>
                             <h6>Balance: <code>{{ profile.balance }}</code></h6>

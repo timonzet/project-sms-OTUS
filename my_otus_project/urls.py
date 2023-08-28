@@ -19,13 +19,19 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from my_otus_project.settings import DEBUG
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     # path("", IndexTemplateView.as_view(), name="index"),
     path("", include("my_app.urls")),
     path("auth/", include("app_auth.urls")),
-    path("__debug__/", include("debug_toolbar.urls")),
 ]
+
+if DEBUG:
+    urlpatterns.extend([
+        path("__debug__/", include("debug_toolbar.urls"))
+    ],)
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
