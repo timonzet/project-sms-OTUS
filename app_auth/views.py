@@ -37,7 +37,7 @@ class LogoutView(LogoutViewGeneric):
 class RegisterView(CreateView):
     form_class = UserCreationForm
     template_name = "app_auth/register.html"
-    success_url = reverse_lazy("app_auth:about-me")
+    success_url = reverse_lazy("my_app:profile")
 
     def form_valid(self, form):
         response = super().form_valid(form)
